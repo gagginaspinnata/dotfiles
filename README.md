@@ -4,4 +4,4 @@
 
 Just copy and paste this command
 
-	git clone https://github.com/gagginaspinnata/dotfiles.git  && cd dotfiles && chmod +x boostrap.sh && ./boostrap.sh
+	git clone https://github.com/gagginaspinnata/dotfiles.git  && cd dotfiles && chmod +x boostrap.sh && ./bootstrap.sh
