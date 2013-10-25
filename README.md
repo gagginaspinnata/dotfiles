@@ -2,7 +2,7 @@
 
 ##Prerequisites
 
-First thing first you need to setup a new ssh key to work with bitbucket.
+First thing first you need to setup a new ssh key to work with github.
 You can generate a new key with the command:
 	
 	ssh-keygen
