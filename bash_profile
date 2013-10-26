@@ -34,6 +34,30 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
 
+
+ 
+# indica come mostrare il cursore. \u mostra l'username mentre \W mostra la working directory
+PS1='[\u:\w]→'  
+ 
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+
+###########
+## ALIAS###
+###########
+alias c='clear'
+alias cdfut='cd ~/Development/Progetti/fut14-bot/'
+
+# scorciatoria per committare tutto con git
+alias gc='git add . && git commit -m'
+
+# crea un tunnel ssh sicuro ed imposta il sistema ad utilizzarlo come proxy socks
+alias privateon='sudo networksetup -setsocksfirewallproxy WI-FI 127.0.0.1 8080 && ssh vps -D 8080'
+
+# Disattiva il proxy di sopr
+alias privateoff='sudo networksetup -setsocksfirewallproxystate WI-FI off'
+
 #######################################################
 ############  colori from github #####################
 ######################################################
@@ -97,28 +121,4 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 ######################################################
 ######### fine colori from github ####################
 #####################################################
-
- 
-# indica come mostrare il cursore. \u mostra l'username mentre \W mostra la working directory
-PS1='[\u:\w]→'  
- 
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-
-###########
-## ALIAS###
-###########
-alias c='clear'
-alias cdfut='cd ~/Development/Progetti/fut14-bot/'
-
-# scorciatoria per committare tutto con git
-alias gc='git add . && git commit -m'
-
-# crea un tunnel ssh sicuro ed imposta il sistema ad utilizzarlo come proxy socks
-alias privateon='sudo networksetup -setsocksfirewallproxy WI-FI 127.0.0.1 8080 && ssh vps -D 8080'
-
-# Disattiva il proxy di sopr
-alias privateoff='sudo networksetup -setsocksfirewallproxystate WI-FI off'
-
 
