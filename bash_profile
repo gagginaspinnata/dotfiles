@@ -130,6 +130,8 @@ function linux_install_rutorrent(){
 	url='https://raw.github.com/Kerwood/rtorrent.auto.install/master/rtorrent.auto.install-NEWEST-VERSION'
 	cd
 	wget $url
+	echo'First thing first you need to create a new systems user. The name will be seedbox. Typein a password for him.'
+	adduser seedbox
 	bash rtorrent.auto.install-NEWEST-VERSION
 }
 
