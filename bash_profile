@@ -129,7 +129,7 @@ function linux_install_rutorrent(){
 	
 	url='https://raw.github.com/Kerwood/rtorrent.auto.install/master/rtorrent.auto.install-NEWEST-VERSION'
 	cd
-	wget url
+	wget $url
 	bash rtorrent.auto.install-NEWEST-VERSION
 }
 
