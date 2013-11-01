@@ -131,7 +131,9 @@ function linux_install_rutorrent(){
 	cd
 	wget $url
 	echo'First thing first you need to create a new systems user. The name will be seedbox. Typein a password for him.'
+	sleep 3
 	adduser seedbox
+	sleep 3
 	bash rtorrent.auto.install-NEWEST-VERSION
 }
 
