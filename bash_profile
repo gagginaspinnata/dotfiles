@@ -139,7 +139,7 @@ function linux_install_rutorrent(){
 
 function linux_install_openvpn(){
 	
-	choose_url = 'http://openvpn.net/index.php/access-server/download-openvpn-as-sw.html'
+	choose_url='http://openvpn.net/index.php/access-server/download-openvpn-as-sw.html'
 	echo 'Before you begin check this url to get the url of your os. Then pass this url to this function. Url: $choose_url'
 		
 }
