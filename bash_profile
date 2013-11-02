@@ -147,5 +147,5 @@ function linux_install_openvpn(){
 function linux_install_deluge(){
 	
 	apt-get install deluged deluge-web -y
-	echo Now you can start deluge demon using "deluge-web". We recommand using with screen. To attach to background press ctr a d'
+	echo 'Now you can start deluge demon using "deluge-web". We recommand using with screen. To attach to background press ctr a d'
 }
