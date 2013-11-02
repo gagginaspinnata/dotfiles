@@ -143,3 +143,9 @@ function linux_install_openvpn(){
 	echo 'Before you begin check this url to get the url of your os. Then pass this url to this function. Url: $choose_url'
 		
 }
+
+function linux_install_deluge(){
+	
+	apt-get install deluged deluge-web -y
+	echo 'Now you can start deluge demon using "deluge-web". We recommand using with screen. To attach to background press ctr a d'
+}
