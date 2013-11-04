@@ -147,5 +147,6 @@ function linux_install_openvpn(){
 function linux_install_deluge(){
 	
 	apt-get install deluged deluge-web -y
-	echo 'Now you can start deluge demon using "deluge-web". We recommand using with screen. To attach to background press ctr a d'
+	clear
+	echo 'Now you can start deluge demon using "deluge-web". We recommand using with screen. To attach to background press ctr a d. You can now access web-ui from youripadress:8112 '
 }
