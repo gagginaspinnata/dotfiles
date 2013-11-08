@@ -60,6 +60,8 @@ alias privateoff='sudo networksetup -setsocksfirewallproxystate WI-FI off'
 # Lancia questo comando dalla directory che contiene i settings. Questo comando scarica ed installa i settings sul decoder
 alias installsettings='wget https://gist.github.com/gagginaspinnata/4749345/raw/0a72ea18f73a182ce6b9abbc487740238c4a8d6b/copy_and_backup_settings.sh; chmod +x copy_and_backup_settings.sh; bash copy_and_backup_settings.sh'
 
+#funzione che mi ritorna il mio ip pubblico
+alias myip='curl http://ipecho.net/plain; echo'
 
 #######################################################
 ############  colori from github #####################
