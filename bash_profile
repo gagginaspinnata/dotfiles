@@ -166,3 +166,8 @@ function linux_install_deluge(){
 function randomstring(){
 	openssl rand -base64 $1
 }
+
+# Creates a new ssh key. example: newsshkey myemail@gmail.com
+function newsshkey(){
+	ssh-keygen -t rsa -C "$1"
+}
