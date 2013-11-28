@@ -1,0 +1,16 @@
+alias c='clear'
+
+# scorciatoria per committare tutto con git
+alias gc='git add . && git commit -m'
+
+# crea un tunnel ssh sicuro ed imposta il sistema ad utilizzarlo come proxy socks
+alias privateon='sudo networksetup -setsocksfirewallproxy WI-FI 127.0.0.1 8080 && ssh vps -D 8080'
+
+# Disattiva il proxy di sopra
+alias privateoff='sudo networksetup -setsocksfirewallproxystate WI-FI off'
+
+# Lancia questo comando dalla directory che contiene i settings. Questo comando scarica ed installa i settings sul decoder
+alias installsettings='wget https://gist.github.com/gagginaspinnata/4749345/raw/0a72ea18f73a182ce6b9abbc487740238c4a8d6b/copy_and_backup_settings.sh; chmod +x copy_and_backup_settings.sh; bash copy_and_backup_settings.sh'
+
+#funzione che mi ritorna il mio ip pubblico
+alias myip='curl http://ipecho.net/plain; echo'
