@@ -14,3 +14,6 @@ alias installsettings='wget https://gist.github.com/gagginaspinnata/4749345/raw/
 
 #funzione che mi ritorna il mio ip pubblico
 alias myip='curl http://ipecho.net/plain; echo'
+
+# It show my current ssh key
+alias sshkey='cat ~/.ssh/id_rsa.pub'
