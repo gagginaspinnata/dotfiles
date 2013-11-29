@@ -38,3 +38,13 @@ function randomstring(){
 function newsshkey(){
     ssh-keygen -t rsa -C "$1"
 }
+
+# Creates a tar.gz archive
+function tarit(){
+	tar -cvzf "$1" "$2"
+}
+
+# untar an tar.gz archive
+function untarit(){
+	tar -xvzf "$1"
+}
