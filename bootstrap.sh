@@ -12,6 +12,12 @@ echo "           __      __  _____ __
 echo $"Choose if you want to install [z]sh or [b]ash dotfiles: "
 read shell
 
+cd ~
+git clone https://github.com/gagginaspinnata/dotfiles.git
+cd dotfiles
+chmod +x install_bash.sh install_zsh
+
+
 if [[ "$shell" == "b" ]]; then
 
     bash install_bash.sh
