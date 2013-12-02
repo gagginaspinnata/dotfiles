@@ -32,5 +32,4 @@ fi
 ln -s $dir/vimrc ~/.vimrc
 
 # changing the default theme
-cat ~/.zshrc | sed 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1ys\2~' > ~/.zshrc
-
+#cat ~/.zshrc | sed 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1ys\2~' > ~/.zshrc
