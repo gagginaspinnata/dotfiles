@@ -18,3 +18,4 @@ if [[ "$shell" == "b" ]]; then
 else
     git checkout zsh
     bash install.sh
+fi
