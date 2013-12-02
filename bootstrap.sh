@@ -9,7 +9,8 @@ echo "           __      __  _____ __
     \__,_/\____/\__/_/ /_/_/\___/____/
                                         "
 
-echo $"Choose if you want to install [z]sh or [b]ash dotfiles: "
+echo "Choose if you want to install [z]sh or [b]ash dotfiles: "
+
 read shell
 
 if [[ "$shell" == "b" ]]; then
