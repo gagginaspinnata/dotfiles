@@ -33,3 +33,7 @@ ln -s $dir/vimrc ~/.vimrc
 
 # changing the default theme
 #cat ~/.zshrc | sed 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1ys\2~' > ~/.zshrc
+
+#setting 256 term color
+echo "export TERM=xterm-256color">>~/.zshrc
+echo '[ -n "$TMUX" ] && export TERM=screen-256color'>>~/.zshrc
