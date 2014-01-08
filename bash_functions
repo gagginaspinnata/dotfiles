@@ -72,5 +72,6 @@ echo ''
 read -p 'Drag and drop the "Mavericks.app" into this terminal window and press enter: ' var1
 read -p 'Drag and drop the path to the USB dongle (usually /Volumes/Untiteled) into this terminal window and press enter: ' var2
 
-sudo $var1/Contents/Resources/createinstallmedia --volume $var2 --applicationpath $var1 --nointeraction
+sudo "$var1"/Contents/Resources/createinstallmedia --volume "$var2" --applicationpath "$var1" --nointeraction
+
 }
