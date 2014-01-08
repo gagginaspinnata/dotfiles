@@ -48,3 +48,29 @@ function tarit(){
 function untarit(){
 	tar -xvzf "$1"
 }
+
+
+function osxbootableusb(){
+clear
+
+echo '
+       ____  ______  __    __                __        __    __        __  _______ ____
+      / __ \/ ___/ |/ /   / /_  ____  ____  / /_____ _/ /_  / /__     / / / / ___// __ )
+     / / / /\__ \|   /   / __ \/ __ \/ __ \/ __/ __ `/ __ \/ / _ \   / / / /\__ \/ __  |
+    / /_/ /___/ /   |   / /_/ / /_/ / /_/ / /_/ /_/ / /_/ / /  __/  / /_/ /___/ / /_/ /
+    \____//____/_/|_|  /_.___/\____/\____/\__/\__,_/_.___/_/\___/   \____//____/_____/  '
+
+echo ''
+echo 'Author: Mauro Marano'
+echo 'Web: mauromarano.it'
+echo 'GitHub: https://github.com/gagginaspinnata'
+echo ''
+echo ''
+
+echo 'This script will guide you throught the process needed to make a mavericks bootable USB dongle.'
+echo ''
+read -p 'Drag and drop the "Mavericks.app" into this terminal window and press enter: ' var1
+read -p 'Drag and drop the path to the USB dongle (usually /Volumes/Untiteled) into this terminal window and press enter: ' var2
+
+sudo $var1/Contents/Resources/createinstallmedia --volume $var2 --applicationpath $var1 --nointeraction
+}
