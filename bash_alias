@@ -1,5 +1,7 @@
 alias c='clear'
 
+alias ..="cd .."
+
 # scorciatoria per committare tutto con git
 alias gc='git add . && git commit -m'
 
