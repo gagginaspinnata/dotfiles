@@ -22,6 +22,9 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+#installing vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
@@ -31,3 +34,5 @@ for file in $files; do
 done
 
 source ../.bash_profile
+
+echo "Remember to run :PluginInstall inside vim to install nerdtree"
