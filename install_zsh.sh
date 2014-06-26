@@ -19,7 +19,7 @@ if [[ "$OS" == "linux" ]]; then
     apt-get install zsh
 fi
 
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+curl -L http://install.ohmyz.sh | sh
 
 cp $dir/bash_alias ~/.oh-my-zsh/custom/alias.zsh
 cp $dir/bash_functions ~/.oh-my-zsh/custom/functions.zsh
