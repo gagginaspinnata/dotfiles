@@ -28,6 +28,9 @@ if [[ "$OS" == 'mac' ]]; then
     ln -s $dir/osx ~/.osx
 fi
 
+#installing vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 # moving vimrc files to root
 ln -s $dir/vimrc ~/.vimrc
 
@@ -37,3 +40,5 @@ ln -s $dir/vimrc ~/.vimrc
 #setting 256 term color
 echo "export TERM=xterm-256color">>~/.zshrc
 echo '[ -n "$TMUX" ] && export TERM=screen-256color'>>~/.zshrc
+
+echo "Remember to run :PluginInstall inside vim to install nerdtree"
