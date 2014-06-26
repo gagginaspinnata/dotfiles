@@ -53,3 +53,10 @@ function! StripWhitespace()
 	call setpos('.', save_cursor)
 	call setreg('/', old_query)
 endfunction
+
+
+" starts nerdtree when vim is opened
+autocmd vimenter * NERDTree
+
+" Map CTRL+n to toggle nerdtree
+map <C-n> :NERDTreeToggle<CR>
