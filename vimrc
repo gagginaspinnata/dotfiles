@@ -15,6 +15,9 @@ Plugin 'scrooloose/nerdtree.git'
 " by name as it appears on the site
 Plugin 'Buffergator'
 
+" Syntax hihgler
+Plugin 'scrooloose/syntastic'
+
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
