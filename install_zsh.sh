@@ -19,6 +19,7 @@ if [[ "$OS" == "linux" ]]; then
     apt-get install zsh
 fi
 
+# installing homyzsh
 curl -L http://install.ohmyz.sh | sh
 
 cp $dir/bash_alias ~/.oh-my-zsh/custom/alias.zsh
