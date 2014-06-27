@@ -18,6 +18,9 @@ Plugin 'Buffergator'
 " Syntax hihgler
 Plugin 'scrooloose/syntastic'
 
+" Autocompletion plugin
+Plugin 'Shougo/neocomplcache.vim'
+
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
