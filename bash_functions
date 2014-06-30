@@ -75,3 +75,11 @@ read -p 'Drag and drop the path to the USB dongle (usually /Volumes/Untiteled) i
 sudo "$var1"/Contents/Resources/createinstallmedia --volume "$var2" --applicationpath "$var1" --nointeraction
 
 }
+
+
+function laravel(){
+
+	sudo composer create-project laravel/laravel "$1"
+	sudo chmod -R 777 "$1"
+
+}
