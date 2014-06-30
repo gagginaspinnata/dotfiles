@@ -22,6 +22,3 @@ alias sshkey='cat ~/.ssh/id_rsa.pub'
 
 # Link to the ovpn2tblk executable
 alias ovpn2tblk=python ~/dotfiles/bin/ovpn2tblk.py
-
-#shortcut for laravel
-alias laravel="sudo composer create-project laravel/laravel"
