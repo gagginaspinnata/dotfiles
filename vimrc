@@ -19,7 +19,10 @@ Plugin 'Buffergator'
 Plugin 'scrooloose/syntastic'
 
 " Autocompletion plugin
-Plugin 'Shougo/neocomplcache.vim'
+" Plugin 'Shougo/neocomplcache.vim'
+
+" Pluginper gli snippet
+Plugin 'msanders/snipmate.vim'
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
@@ -62,10 +65,12 @@ endfunction
 
 
 " starts nerdtree when vim is opened
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " Map CTRL+n to toggle nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
 "  close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+filetype plugin on
