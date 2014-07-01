@@ -44,7 +44,11 @@ set number
 set cursorline
 
 " Set tab as 2 white space
-set tabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
 
 " Enable mouse in all mode
 set mouse=a
@@ -78,3 +82,12 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 filetype plugin on
+
+
+" More Common Settings.
+ set scrolloff=3
+ set autoindent
+ set showmode
+ set showcmd
+ set hidden
+ set visualbell
