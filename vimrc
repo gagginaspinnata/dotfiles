@@ -18,8 +18,6 @@ Plugin 'Buffergator'
 " Syntax hihgler
 Plugin 'scrooloose/syntastic'
 
-" Autocompletion plugin
-" Plugin 'Shougo/neocomplcache.vim'
 
 " Pluginper gli snippet
 Plugin 'msanders/snipmate.vim'
@@ -59,8 +57,6 @@ set ruler
 " Show the filename inside the titlebar
 set title
 
-" Show command as it's being typed
-" set showcmd
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -72,8 +68,6 @@ function! StripWhitespace()
 endfunction
 
 
-" starts nerdtree when vim is opened
-" autocmd vimenter * NERDTree
 
 " Map CTRL+n to toggle nerdtree
 map <C-n> :NERDTreeToggle<CR>
