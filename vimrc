@@ -24,6 +24,10 @@ Plugin 'scrooloose/syntastic'
 " Pluginper gli snippet
 Plugin 'msanders/snipmate.vim'
 
+" Plugin per la gestione delle parentesi, per maggiori informazioni: https://github.com/jiangmiao/auto-pairs
+ Plugin 'jiangmiao/auto-pairs'
+
+
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
 
