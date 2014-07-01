@@ -60,7 +60,7 @@ set ruler
 set title
 
 " Show command as it's being typed
-set showcmd
+" set showcmd
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -88,6 +88,5 @@ filetype plugin on
  set scrolloff=3
  set autoindent
  set showmode
- set showcmd
  set hidden
  set visualbell
