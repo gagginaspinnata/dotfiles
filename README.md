@@ -10,3 +10,7 @@ Just copy and paste this command
     chmod +x install_bash.sh install_zsh bootstrap.sh
 
     bash bootstrap.sh
+    
+### One line installation for ubuntu/debian
+
+	wget http://goo.gl/pnNDi9; mv pnNDi9 ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
