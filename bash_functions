@@ -121,9 +121,6 @@ EOF
 echo "--- Enabling mod-rewrite ---"
 sudo a2enmod rewrite
 
-echo "--- Setting document root ---"
-sudo rm -rf /var/www
-sudo ln -fs /vagrant/public /var/www
 
 
 echo "--- What developer codes without errors turned on? Not you, master. ---"
