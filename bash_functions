@@ -37,6 +37,8 @@ function randomstring(){
 # Creates a new ssh key. example: newsshkey myemail@gmail.com
 function newsshkey(){
     ssh-keygen -t rsa -C "$1"
+    eval $(ssh-agent)
+    ssh-add
 }
 
 # Creates a tar.gz archive
