@@ -6,6 +6,7 @@ alias ..="cd .."
 alias gc='git add . && git commit -m'
 
 # crea un tunnel ssh sicuro ed imposta il sistema ad utilizzarlo come proxy socks
+#  da notare che utilizza la configurazione salvata in ~/.ssh/config con il nome di vps
 alias privateon='sudo networksetup -setsocksfirewallproxy WI-FI 127.0.0.1 8080 && ssh vps -D 8080'
 
 # Disattiva il proxy di sopra
