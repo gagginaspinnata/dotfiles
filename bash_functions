@@ -143,3 +143,21 @@ sudo mv composer.phar /usr/local/bin/composer
 echo "--- All set to go! Would you like to play a game? ---"
 
 }
+
+
+# this is a helper who creates a ssh shortcut
+# please NOTE that this work on ZSH shell only. In order to make it works on bash you have to change the read command as follow:
+# read -p "enter the name (example: myownvps): " name
+function  add_ssh_server(){
+  read  "?enter the name (example: myownvps): " name
+  read  "?enter the HostName or ip adress (example: google.com or 145.123.456.123): " hostname
+  read  "?enter the Port (usually this is 22): " port
+  read  "?enter the User: " user
+  
+  str="Host $name
+    HostName $hostname
+    Port $port
+    User $user"
+  echo $str >> ~/.ssh/config
+  echo "Well done! You can now connect to your server running:\n ssh $name"
+}
