@@ -153,11 +153,18 @@ function  add_ssh_server(){
   read  "?enter the HostName or ip adress (example: google.com or 145.123.456.123): " hostname
   read  "?enter the Port (usually this is 22): " port
   read  "?enter the User: " user
-  
+
   str="Host $name
     HostName $hostname
     Port $port
     User $user"
   echo $str >> ~/.ssh/config
   echo "Well done! You can now connect to your server running:\n ssh $name"
+}
+
+
+# Copies the ssh to a remote server.
+function copy_ssh_keys(){
+    echo 'Usage: copy_ssh_keys root@127.98.23.45'
+    cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 }
