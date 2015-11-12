@@ -31,11 +31,23 @@ function linux_install_deluge(){
 # Creates a random string.
 # Example: randomstring 20 for creating a random string 20 chars length
 function randomstring(){
+  if [ $# -eq 0  ]
+    then
+      echo 'You need to pass a number (the length)'
+      echo 'Usage: randomstring 6'
+      exit 1
+  fi
     openssl rand -base64 $1
 }
 
 # Creates a new ssh key. example: newsshkey myemail@gmail.com
 function newsshkey(){
+  if [ $# -eq 0  ]
+    then
+      echo 'You need to pass an email adress'
+      echo 'Usage: newsshkey myemail@gmail.com'
+      exit 1
+  fi
     ssh-keygen -t rsa -C "$1"
     eval $(ssh-agent)
     ssh-add
@@ -43,11 +55,23 @@ function newsshkey(){
 
 # Creates a tar.gz archive
 function tarit(){
+  if [ $# -eq 0  ]
+    then
+      echo 'You need to pass 2 parameters. First the name of the archive and then the file to compress'
+      echo 'Usage: tarit archive.tar.gz /mydirectory/*'
+      exit 1
+  fi
 	tar -cvzf "$1" "$2"
 }
 
 # untar an tar.gz archive
 function untarit(){
+  if [ $# -eq 0  ]
+    then
+      echo 'You need to pass the path to the archive to untar'
+      echo 'Usage: untarit myarchive.tar.gz'
+      exit 1
+  fi
 	tar -xvzf "$1"
 }
 
@@ -80,6 +104,13 @@ sudo "$var1"/Contents/Resources/createinstallmedia --volume "$var2" --applicatio
 
 
 function laravel(){
+
+  if [ $# -eq 0  ]
+    then
+      echo 'You need to pass the name of the new project'
+      echo 'Usage: laravel my_new_blog'
+      exit 1
+  fi
 
 	sudo composer create-project laravel/laravel "$1"
 	sudo chmod -R 777 "$1"
@@ -165,6 +196,10 @@ function  add_ssh_server(){
 
 # Copies the ssh to a remote server.
 function copy_ssh_keys(){
-    echo 'Usage: copy_ssh_keys root@127.98.23.45'
+    if [ $# -eq 0  ]
+      then
+        echo 'Usage: copy_ssh_keys root@127.98.23.45'
+        exit 1
+    fi
     cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 }
