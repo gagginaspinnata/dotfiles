@@ -23,3 +23,5 @@ alias sshkey='cat ~/.ssh/id_rsa.pub'
 
 # Link to the ovpn2tblk executable
 alias ovpn2tblk=python ~/dotfiles/bin/ovpn2tblk.py
+
+alias venv='virtualenv venv && source venv/bin/activate'
