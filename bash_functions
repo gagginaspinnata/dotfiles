@@ -203,3 +203,12 @@ function copy_ssh_keys(){
     fi
     cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 }
+
+# installs the kodi media center
+function installkodi(){
+    sudo apt-get install software-properties-common
+    sudo add-apt-repository ppa:team-xbmc/ppa
+    sudo apt-get update
+    sudo apt-get install kodi
+    sudo apt-get install kodi-pvr-iptvsimple
+}
