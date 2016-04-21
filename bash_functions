@@ -211,3 +211,39 @@ function installkodi(){
     sudo apt-get install kodi
     sudo apt-get install kodi-pvr-iptvsimple
 }
+
+# initialize a new dir with node, npm and babel
+es6init(){
+  if [ $# -eq 0  ]
+    then
+      echo "Usage: es6init dir"
+    else
+    mkdir $1
+    cd $1
+    mkdir src
+    git init
+    echo "node_modules" > .gitignore
+    touch README.md
+    npm init
+    npm install babel-cli babel-preset-es2015 --save-dev
+    npm install async --save
+    
+    # TODO: check why it does not word
+    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel --presets es2015 .\/src\/app.js" -o app.js \&\& node app.js,/' > package.json
+    data='class Bear{\n
+    \tconstructor(name){\n
+    \t\tthis.name = name;\n
+    \t}\n
+    \n
+    \tgreet(message){\n
+    \t\tconsole.log(`\${this.name} says \${message}`)\n
+    \t}\n
+    }\n
+
+    let b = new Bear("homer");\n
+    b.greet("ciao mondo")'
+
+    echo $data > src/app.js
+  fi
+
+}
