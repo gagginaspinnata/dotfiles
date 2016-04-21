@@ -35,9 +35,9 @@ function randomstring(){
     then
       echo 'You need to pass a number (the length)'
       echo 'Usage: randomstring 6'
-      exit 1
-  fi
+  else
     openssl rand -base64 $1
+  fi
 }
 
 # Creates a new ssh key. example: newsshkey myemail@gmail.com
@@ -46,11 +46,11 @@ function newsshkey(){
     then
       echo 'You need to pass an email adress'
       echo 'Usage: newsshkey myemail@gmail.com'
-      exit 1
-  fi
+  else
     ssh-keygen -t rsa -C "$1"
     eval $(ssh-agent)
     ssh-add
+  fi
 }
 
 # Creates a tar.gz archive
@@ -59,9 +59,9 @@ function tarit(){
     then
       echo 'You need to pass 2 parameters. First the name of the archive and then the file to compress'
       echo 'Usage: tarit archive.tar.gz /mydirectory/*'
-      exit 1
+  else
+	   tar -cvzf "$1" "$2"
   fi
-	tar -cvzf "$1" "$2"
 }
 
 # untar an tar.gz archive
@@ -70,9 +70,9 @@ function untarit(){
     then
       echo 'You need to pass the path to the archive to untar'
       echo 'Usage: untarit myarchive.tar.gz'
-      exit 1
+  else
+	   tar -xvzf "$1"
   fi
-	tar -xvzf "$1"
 }
 
 
@@ -109,12 +109,11 @@ function laravel(){
     then
       echo 'You need to pass the name of the new project'
       echo 'Usage: laravel my_new_blog'
-      exit 1
+  else
+
+	   sudo composer create-project laravel/laravel "$1"
+	    sudo chmod -R 777 "$1"
   fi
-
-	sudo composer create-project laravel/laravel "$1"
-	sudo chmod -R 777 "$1"
-
 }
 
 
@@ -199,9 +198,9 @@ function copy_ssh_keys(){
     if [ $# -eq 0  ]
       then
         echo 'Usage: copy_ssh_keys root@127.98.23.45'
-        exit 1
-    fi
+    else
     cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+    fi
 }
 
 # installs the kodi media center
