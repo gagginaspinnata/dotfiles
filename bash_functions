@@ -223,6 +223,7 @@ es6init(){
     mkdir src
     git init
     echo "node_modules" > .gitignore
+    echo ".DS_Store" >> .gitignore
     touch README.md
     npm init
     npm install babel-cli babel-preset-es2015 --save-dev
