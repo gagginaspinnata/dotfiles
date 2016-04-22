@@ -228,8 +228,9 @@ es6init(){
     npm install babel-cli babel-preset-es2015 --save-dev
     npm install async --save
     
-    # TODO: check why it does not word
-    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel --presets es2015 .\/src\/app.js" -o app.js \&\& node app.js,/' > package.json
+    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel --presets es2015 .\/src\/app.js" -o app.js \&\& node app.js,/' > package2.json
+    rm package.json
+    mv package2.json package.json
     data='class Bear{\n
     \tconstructor(name){\n
     \t\tthis.name = name;\n
