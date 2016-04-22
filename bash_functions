@@ -60,7 +60,7 @@ function tarit(){
       echo 'You need to pass 2 parameters. First the name of the archive and then the file to compress'
       echo 'Usage: tarit archive.tar.gz /mydirectory/*'
   else
-	   tar -cvzf "$1" "$2"
+       tar -cvzf "$1" "$2"
   fi
 }
 
@@ -71,7 +71,7 @@ function untarit(){
       echo 'You need to pass the path to the archive to untar'
       echo 'Usage: untarit myarchive.tar.gz'
   else
-	   tar -xvzf "$1"
+       tar -xvzf "$1"
   fi
 }
 
@@ -111,8 +111,8 @@ function laravel(){
       echo 'Usage: laravel my_new_blog'
   else
 
-	   sudo composer create-project laravel/laravel "$1"
-	    sudo chmod -R 777 "$1"
+       sudo composer create-project laravel/laravel "$1"
+        sudo chmod -R 777 "$1"
   fi
 }
 
@@ -228,7 +228,7 @@ es6init(){
     npm install babel-cli babel-preset-es2015 --save-dev
     npm install async --save
     
-    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel --presets es2015 .\/src\/app.js" -o app.js \&\& node app.js,/' > package2.json
+    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel --presets es2015 .\/src\/app.js -o app.js \&\& node app.js",/' > package2.json
     rm package.json
     mv package2.json package.json
     data='class Bear{\n
