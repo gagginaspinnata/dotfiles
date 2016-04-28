@@ -1,0 +1,97 @@
+#!/bin/bash
+
+###########################################################################
+# AUTHOR: Mauro Marano
+# SITE: mauromarano.it/com
+#  Questo script serve per tenere organizzato il desktop
+#  Una volta impostate le variabili lui andrà a creare delle cartelle
+#  Per ogni tipo di file specificato.
+#  La cosa migliore è farlo girare con un cronjob.
+#  crontab -e 
+#  0 * * * *  PATH/./desktop_organizer.sh
+#  Questo per eseguirlo ogni ora
+###########################################################################
+
+
+DESKTOP="/Volumes/Desktop/"
+
+PDF="PDF"
+IMG="IMMAGINI"
+EXCEL="EXCEL"
+ARCHIVI="ARCHIVI"
+VETTORIALI="VETTORIALI"
+VIDEO="VIDEO"
+WORLD="DOC"
+TEXT="TEXT"
+
+PDF_LIST=("pdf" "PDF") 
+IMG_LIST=("jpg" "JPG" "jpeg" "JPEG" "gif" "GIF" "png" "PNG" "tif" "TIF")
+EXCEL_LIST=("xls" "XLS" "ods" "ODS" "xlsx" "XLSX")
+WORLD_LIST=("doc" "DOC" "docx" "DOCX")
+ARCHIVI_LIST=("zip" "ZIP" "rar" "RAR")
+VETTORIALI_LIST=("ai" "AI")
+VIDEO_LIST=("mp4" "MP4" "avi" "AVI" "mkv" "MKV" "mov" "MOV")
+TEXT_LIST=("txt" "TXT" "rtf" "RTF")
+
+#Prende in ingresso il nome dell'estensione dei file da spostare e la cartella dove spostarli
+# Cerca tutti i file con l'estensione passata, se li trova li sposta nella cartella specificata
+# Se esiste già un file con lo stesso nome gli aggiunge un numero casuale al nome
+move(){
+	filename="$DESKTOP$2"
+	if [ ! -d "$filename" ]; then
+		mkdir -p $filename
+	fi
+
+	ls $DESKTOP*.$1 | while read var;do 
+		echo $var | rev | cut -d'/' -f1 | rev | cut -d'.' -f1 | while read var2; do
+
+			path_completa="$filename/$var2.$1"
+			trovato=false
+
+			#se il file non esiste sposta il file
+			if [ ! -f "$filename/$var2.$1" ]; then
+				mv "$var" "$path_completa"
+			
+			#altrimenti genera un numbero casuale fino a quando non ne trova uno che renda il file unico
+			else
+				while [ "$trovato" = "false" ];do
+					number=$(random_number 500)
+					fn="$filename/$var2-$number.$1"
+					if [ ! -f "$fn" ]; then
+						trovato=true
+						mv "$var" "$fn"
+					fi
+				done
+			fi
+		done
+	done
+}
+
+function random_number {
+	awk "BEGIN{srand();print int(rand()*($1-1))}"
+}
+
+#pdf
+for i in "${PDF_LIST[@]}"; do move "$i" $PDF; done
+
+#immagini
+for i in "${IMG_LIST[@]}"; do move "$i" $IMG; done
+
+ 
+# #Excel
+for i in "${EXCEL_LIST[@]}"; do move "$i" $EXCEL; done
+
+# #archivi
+for i in "${ARCHIVI_LIST[@]}"; do move "$i" $ARCHIVI; done
+
+# #vettoriali
+for i in "${VETTORIALI_LIST[@]}"; do move "$i" $VETTORIALI; done
+
+# #video
+for i in "${VIDEO_LIST[@]}"; do move "$i" $VIDEO; done
+
+#doc word
+for i in "${WORLD_LIST[@]}"; do move "$i" $WORLD; done
+
+#text
+for i in "${TEXT_LIST[@]}"; do move "$i" $TEXT; done
