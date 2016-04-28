@@ -13,4 +13,4 @@ Just copy and paste this command
     
 ### One line installation for ubuntu/debian
 
-	wget http://goo.gl/pnNDi9; mv pnNDi9 ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
+	curl -s -L https://gist.githubusercontent.com/gagginaspinnata/8038064/raw/ee010b647c35662319742ddf0a378ae0bcc677d3/ubuntu_install.sh | sh
