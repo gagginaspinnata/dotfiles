@@ -13,4 +13,4 @@ Just copy and paste this command
     
 ### One line installation for ubuntu/debian
 
-	curl -s -L https://gist.githubusercontent.com/gagginaspinnata/8038064/raw/ee010b647c35662319742ddf0a378ae0bcc677d3/ubuntu_install.sh | sh
+	curl -s -L https://goo.gl/ckvFaK | sh
