@@ -22,8 +22,8 @@ fi
 # installing homyzsh
 curl -L http://install.ohmyz.sh | sh
 
-cp $dir/bash_alias ~/.oh-my-zsh/custom/alias.zsh
-cp $dir/bash_functions ~/.oh-my-zsh/custom/functions.zsh
+ln -s $dir/bash_alias ~/.oh-my-zsh/custom/alias.zsh
+ln -s $dir/bash_functions ~/.oh-my-zsh/custom/functions.zsh
 
 if [[ "$OS" == 'mac' ]]; then
     ln -s $dir/osx ~/.osx
