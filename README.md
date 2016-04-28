@@ -13,4 +13,4 @@ Just copy and paste this command
     
 ### One line installation for ubuntu/debian
 
-	curl -s -L https://goo.gl/ckvFaK | sh
+	curl -s -L https://goo.gl/ckvFaK | bash
