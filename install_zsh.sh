@@ -37,7 +37,7 @@ ln -s $dir/vimrc ~/.vimrc
 
 # changing the default theme
 #cat ~/.zshrc | sed 's~\(ZSH_THEME="\)[^"]*\(".*\)~\1dpoggi\2~' > ~/.zshrc
-cat ~/.zshrc | sed 's/\(ZSH_THEME="\)\(.\+\)"/\1dpoggi"/' > ~/.zshrc
+#cat ~/.zshrc | sed 's/\(ZSH_THEME="\)\(.\+\)"/\1dpoggi"/' > ~/.zshrc
 
 #setting 256 term color
 echo "export TERM=xterm-256color">>~/.zshrc
