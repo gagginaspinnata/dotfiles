@@ -43,6 +43,8 @@ ln -s $dir/vimrc ~/.vimrc
 echo "export TERM=xterm-256color">>~/.zshrc
 echo '[ -n "$TMUX" ] && export TERM=screen-256color'>>~/.zshrc
 
+#if we are on linux (ubuntu/debian)
+
 echo "Remember to run sudo :PluginInstall inside vim to install nerdtree"
 
 echo "Remember to change the zsh theme in the file .zshrc a nice one is the dpoggi"
