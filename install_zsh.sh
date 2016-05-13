@@ -47,6 +47,7 @@ echo '[ -n "$TMUX" ] && export TERM=screen-256color'>>~/.zshrc
 
 if [[ "$OS" == 'linux' ]]; then
 	echo "Do you want to install node/npm ? (y/n): "
+	read node
 	if [[  "$node" == 'y' ]];then
 		curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 		sudo apt-get install -y nodejs build-essential
