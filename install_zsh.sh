@@ -43,6 +43,18 @@ cat ~/.zshrc | sed 's/\(ZSH_THEME="\)\(.\+\)"/\1dpoggi"/' > ~/.zshrc
 echo "export TERM=xterm-256color">>~/.zshrc
 echo '[ -n "$TMUX" ] && export TERM=screen-256color'>>~/.zshrc
 
+#if we are on linux (ubuntu/debian)
+
+if [[ "$OS" == 'linux' ]]; then
+	echo "Do you want to install node/npm ? (y/n): "
+	if [[  "$node" == 'y' ]];then
+		curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+		sudo apt-get install -y nodejs build-essential
+
+	fi
+
+fi
+
 echo "Remember to run sudo :PluginInstall inside vim to install nerdtree"
 
 echo "Remember to change the zsh theme in the file .zshrc a nice one is the dpoggi"
