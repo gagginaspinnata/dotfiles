@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#TO INSTALL: wget https://goo.gl/DgqH0H; mv DgqH0H ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
+#TO INSTALL: wget https://goo.gl/eWXEiO; mv eWXEiO ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
 
 
 function say(){
@@ -31,6 +31,16 @@ sudo apt-get upgrade -y
 say "Installing required packages: vim, git, curl, wget, zip, unzip, htop, tmux" 5
 
 sudo apt-get install vim git curl wget zip unzip htop tmux -y
+
+echo "Do you want to install node/npm ? (y/n): "
+	read node
+	if [[  "$node" == 'y' ]];then
+		say "Installing node and npm" 5
+		curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+		sudo apt-get install -y nodejs build-essential
+
+	fi
+
 
 say "Downloading dotfiles" 2
 #cd ~/
