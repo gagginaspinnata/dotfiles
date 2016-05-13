@@ -13,5 +13,5 @@ Just copy and paste this command
     
 ### One line installation for ubuntu/debian
 
-wget https://goo.gl/DgqH0H; mv DgqH0H ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
+    wget https://goo.gl/DgqH0H; mv DgqH0H ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
 
