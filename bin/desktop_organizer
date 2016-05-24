@@ -12,22 +12,24 @@
 #  Questo per eseguirlo ogni ora
 ###########################################################################
 
-
+# Directory da tenere pulita
 DESKTOP="/Volumes/Desktop/"
 
+# Nomi delle cartelle che andrà a creare
 PDF="PDF"
 IMG="IMMAGINI"
 EXCEL="EXCEL"
 ARCHIVI="ARCHIVI"
 VETTORIALI="VETTORIALI"
 VIDEO="VIDEO"
-WORLD="DOC"
+WORD="DOC"
 TEXT="TEXT"
 
+# Tutte le estensioni che andrà a cercare 
 PDF_LIST=("pdf" "PDF") 
 IMG_LIST=("jpg" "JPG" "jpeg" "JPEG" "gif" "GIF" "png" "PNG" "tif" "TIF")
 EXCEL_LIST=("xls" "XLS" "ods" "ODS" "xlsx" "XLSX")
-WORLD_LIST=("doc" "DOC" "docx" "DOCX")
+WORD_LIST=("doc" "DOC" "docx" "DOCX")
 ARCHIVI_LIST=("zip" "ZIP" "rar" "RAR")
 VETTORIALI_LIST=("ai" "AI")
 VIDEO_LIST=("mp4" "MP4" "avi" "AVI" "mkv" "MKV" "mov" "MOV")
@@ -55,6 +57,8 @@ move(){
 			#altrimenti genera un numbero casuale fino a quando non ne trova uno che renda il file unico
 			else
 				while [ "$trovato" = "false" ];do
+					#TODO al posto di generare un numero random
+					# aggiungere alla fine del file qualcosa tipo DD-MM-YY
 					number=$(random_number 500)
 					fn="$filename/$var2-$number.$1"
 					if [ ! -f "$fn" ]; then
@@ -91,7 +95,7 @@ for i in "${VETTORIALI_LIST[@]}"; do move "$i" $VETTORIALI; done
 for i in "${VIDEO_LIST[@]}"; do move "$i" $VIDEO; done
 
 #doc word
-for i in "${WORLD_LIST[@]}"; do move "$i" $WORLD; done
+for i in "${WORD_LIST[@]}"; do move "$i" $WORD; done
 
 #text
 for i in "${TEXT_LIST[@]}"; do move "$i" $TEXT; done
