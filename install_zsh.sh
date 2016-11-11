@@ -25,8 +25,27 @@ curl -L http://install.ohmyz.sh | sh
 ln -s $dir/bash_alias ~/.oh-my-zsh/custom/alias.zsh
 ln -s $dir/bash_functions ~/.oh-my-zsh/custom/functions.zsh
 
+# If this is a mac
 if [[ "$OS" == 'mac' ]]; then
+    # Standard mac configuration
     ln -s $dir/osx ~/.osx
+    
+    #Installing home BREW
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    
+    # Installing pip
+    say "Installing pip" 5
+    curl -sL -o $dir/pip.py https://bootstrap.pypa.io/get-pip.py
+    sudo python $dir/pip.py
+    rm $dir/pip.py
+    
+    # Installing virtualenv
+    say "Installing virtualenv" 5
+    sudo pip install virtualenv
+
+    
+    
 fi
 
 #installing vundle
