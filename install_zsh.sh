@@ -44,6 +44,10 @@ if [[ "$OS" == 'mac' ]]; then
     say "Installing virtualenv" 5
     sudo pip install virtualenv
 
+    # Installing node
+    say "Installing node" 5
+    brew install node
+
     
     
 fi
