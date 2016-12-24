@@ -249,3 +249,17 @@ es6init(){
   fi
 
 }
+
+gitignore(){
+
+    data='\n
+     .DS_Store\n
+     .DS_Store?\n
+     ._*\n
+     .Spotlight-V100\n
+     .Trashes\n
+     ehthumbs.db\n
+     Thumbs.db'\n
+
+     echo $data > .gitignore
+}
