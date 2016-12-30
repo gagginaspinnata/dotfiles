@@ -250,6 +250,7 @@ es6init(){
 
 }
 
+#initialize a new gitignore file for a git project
 gitignore(){
 
     data='\n
@@ -262,4 +263,9 @@ gitignore(){
      Thumbs.db'\n
 
      echo $data > .gitignore
+}
+
+#show this file
+help(){
+cat ~/dotfiles/bash_functions
 }
