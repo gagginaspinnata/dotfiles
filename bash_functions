@@ -222,8 +222,17 @@ es6init(){
     cd $1
     mkdir src
     git init
-    echo "node_modules" > .gitignore
-    echo ".DS_Store" >> .gitignore
+    data='
+     .DS_Store
+     .DS_Store?
+     ._*
+     .Spotlight-V100
+     .Trashes
+     ehthumbs.db
+     Thumbs.db
+     node_modules'
+
+    echo $data > .gitignore
     touch README.md
     npm init
     npm install babel-cli babel-preset-es2015 --save-dev
@@ -253,14 +262,14 @@ es6init(){
 #initialize a new gitignore file for a git project
 gitignore(){
 
-    data='\n
-     .DS_Store\n
-     .DS_Store?\n
-     ._*\n
-     .Spotlight-V100\n
-     .Trashes\n
-     ehthumbs.db\n
-     Thumbs.db'\n
+    data='
+     .DS_Store
+     .DS_Store?
+     ._*
+     .Spotlight-V100
+     .Trashes
+     ehthumbs.db
+     Thumbs.db'
 
      echo $data > .gitignore
 }
