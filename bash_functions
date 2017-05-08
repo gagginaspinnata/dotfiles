@@ -278,3 +278,13 @@ gitignore(){
 help(){
 cat ~/dotfiles/bash_functions
 }
+
+palestra(){
+    read  "?Inserisci il nome dell immagine da rinominare, oppure semplicemente trascinala nel terminale: " img
+    read "?Settimana di dieta/allenamento: " week
+    read "?Giorno: " day
+    read "?Mese: " month
+    read "?Anno: " year
+
+    mv $img "week $week - $(echo $day)_$(echo $month)_$(echo $year).png"
+}
