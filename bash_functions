@@ -235,26 +235,40 @@ es6init(){
     echo $data > .gitignore
     touch README.md
     npm init
-    npm install babel-cli babel-preset-es2015 --save-dev
+    npm install babel-cli babel-preset-env --save-dev
     npm install async --save
     
-    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel --presets es2015 .\/src\/app.js -o app.js \&\& node app.js",/' > package2.json
+    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel-node src",/' > package2.json
     rm package.json
     mv package2.json package.json
-    data='class Bear{\n
-    \tconstructor(name){\n
-    \t\tthis.name = name;\n
-    \t}\n
-    \n
-    \tgreet(message){\n
-    \t\tconsole.log(`\${this.name} says \${message}`)\n
-    \t}\n
-    }\n
+    data='class Dog {
+    constructor(name) {
+        this.name = name
+              
+    }
 
-    let b = new Bear("homer");\n
-    b.greet("ciao mondo")'
+    bark() {
+        return `Wah wah, I am ${this.name}`
+              
+    }
 
-    echo $data > src/app.js
+}
+
+let dog = new Dog("Roy");
+console.log(dog.bark());'
+
+    echo $data > src/index.js
+    
+    # making the .babelrc file
+    babelrc='{
+    "presets": [
+        "env"
+              
+    ]
+
+}'
+    echo $babelrc > .babelrc
+
   fi
 
 }
