@@ -268,8 +268,7 @@ console.log(dog.bark());'
 
 }'
     echo $babelrc > .babelrc
-    gc 'first commit'
-
+    git add . && git commit -m 'first commit'
   fi
 
 }
