@@ -238,7 +238,7 @@ es6init(){
     npm install babel-cli babel-preset-env --save-dev
     npm install async --save
     
-    cat package.json | sed 's/\("scripts": {\)/\1 \"build\": \"babel-node src",/' > package2.json
+    cat package.json | sed 's/\("scripts": {\)/\1 \"babel\": \"babel-node src",\"build\": \"babel src -o index.js\",/' > package2.json
     rm package.json
     mv package2.json package.json
     data='class Dog {
@@ -268,6 +268,7 @@ console.log(dog.bark());'
 
 }'
     echo $babelrc > .babelrc
+    gc 'first commit'
 
   fi
 
