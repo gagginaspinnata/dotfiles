@@ -1,6 +1,6 @@
-#Getting started
+# Getting started
 
-##Installation
+## Installation
 
 Just copy and paste this command
 
