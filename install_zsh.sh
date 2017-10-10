@@ -3,7 +3,12 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
+function say(){
 
+    clear
+    echo $1
+    sleep $2
+}
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         OS='linux'
