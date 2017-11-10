@@ -3,7 +3,12 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
+function say(){
 
+    clear
+    echo $1
+    sleep $2
+}
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
         OS='linux'
@@ -48,7 +53,9 @@ if [[ "$OS" == 'mac' ]]; then
     say "Installing node" 5
     brew install node
 
-    
+    #let installing all the application without permission
+    say "Let any application be installed" 5
+    sudo spctl --master-disable
     
 fi
 
