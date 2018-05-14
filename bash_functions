@@ -302,3 +302,16 @@ palestra(){
 
     mv $img "week $week - $(echo $day)_$(echo $month)_$(echo $year).png"
 }
+
+function backup_thunderbird(){
+
+  if [ $# -eq 0  ]
+    then
+      echo 'You need to pass the folder of the thunderbird profile.'
+      echo 'Then you need to copy the prefs.js file (who will be copied to the current directory) into the new thunder profile folder overriding the older one.'
+      echo 'Usage: backup_thunderbird ~/Library/thunderbird/Profiles/*.default/'
+  else
+
+       echo "# Mozilla User Preferences" > prefs.js && cat "$1"prefs.js | egrep 'mail.account.*|mail.accountmanager.*|mail.identity.*|mail.server.*|mail.smtpserver.*|mail.smtpservers' >> prefs.js
+  fi
+}
