@@ -283,7 +283,8 @@ gitignore(){
      .Spotlight-V100
      .Trashes
      ehthumbs.db
-     Thumbs.db'
+     Thumbs.db
+     /node_modules'
 
      echo $data > .gitignore
 }
