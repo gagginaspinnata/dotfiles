@@ -277,14 +277,14 @@ console.log(dog.bark());'
 gitignore(){
 
     data='
-     .DS_Store
-     .DS_Store?
-     ._*
-     .Spotlight-V100
-     .Trashes
-     ehthumbs.db
-     Thumbs.db
-     /node_modules'
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+/node_modules'
 
      echo $data > .gitignore
 }
