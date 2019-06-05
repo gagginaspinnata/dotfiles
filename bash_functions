@@ -316,3 +316,8 @@ function backup_thunderbird(){
        echo "# Mozilla User Preferences" > prefs.js && cat "$1"prefs.js | egrep 'mail.account.*|mail.accountmanager.*|mail.identity.*|mail.server.*|mail.smtpserver.*|mail.smtpservers' >> prefs.js
   fi
 }
+
+function dockerDeleteAllContainer(){
+    docker kill $(docker ps -q)
+    docker rm $(docker ps -a -q)
+}
