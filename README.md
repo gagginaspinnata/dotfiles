@@ -14,3 +14,5 @@ Just copy and paste this command
 ### One line installation for ubuntu/debian
 
 	curl -s https://raw.githubusercontent.com/gagginaspinnata/dotfiles/master/ubuntu_install.sh | bash
+	
+	wget https://goo.gl/iELIXK; mv iELIXK ubuntu_install.sh; chmod +x ubuntu_install.sh; sudo bash ubuntu_install.sh
