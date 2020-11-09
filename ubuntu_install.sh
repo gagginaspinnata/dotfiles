@@ -36,7 +36,6 @@ echo "Do you want to install node/npm ? (y/n): "
 	read node
 	if [[  "$node" == 'y' ]];then
 		say "Installing node and npm" 5
-		curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 		sudo apt-get install -y nodejs build-essential
 
 	fi
